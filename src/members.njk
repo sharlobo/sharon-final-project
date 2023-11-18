@@ -1,0 +1,27 @@
+{% extends '_templates/base.njk' %}
+
+{% block page_title %}Members{% endblock %}
+
+{% block page_description %}A list of the Queen members{% endblock %}
+
+{% block content %}
+<article class="container">
+  <h1>Members of Queen</h1>
+  <p>Intro text here.</p>
+    <div class="row">
+    {% for members in members.members %}
+    <div class="col-sm-6">
+      <div class="card">
+         <img src="{{ members.image }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ members.name }}</h5>
+          <p class="card-text">{{ members.instruments }}</p>
+          <a href="{{ members.source }}" target="_blank">Source</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</article>
+{% endblock %}
+
