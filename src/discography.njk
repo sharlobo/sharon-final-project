@@ -5,14 +5,23 @@
 {% block page_description %}List of studio albums{% endblock %}
 
 {% block content %}
+
+<section id="jumbo-disco">
+      <div class="container">
+      </div>
+    </section>
+
 <article class="container">
   <h1>Discography</h1>
-  <p>Intro text here.</p>
-    <div class="row">
-    {% for discography in discography.discography %}
-    <div class="col-sm-6">
-      <div class="card">
-          <img src="{{ discography.image }}">
+  <p> Queen released a total of 15 studio albums during their career. These albums showcase their versatility, spanning various genres from rock and pop to opera and progressive music. Their iconic releases include albums like "A Night at the Opera," "Sheer Heart Attack," "A Day at the Races," "The Game," and "News of the World." Their diverse musical styles contributed significantly to their lasting impact on the music industry.</p>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+
+    {% for discography in queen.discography %}
+
+    <div class="col">
+      <div class="card border-light mb-3" style="width: 18rem;">
+          <img src="/img//{{ discography.image }}" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">{{ discography.title }}</h5>
           <p class="card-text">{{ discography.year }}</p>
@@ -22,4 +31,5 @@
     {% endfor %}
   </div>
 </article>
+
 {% endblock %}

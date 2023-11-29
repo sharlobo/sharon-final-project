@@ -10,15 +10,11 @@
       "type": "sheet",
       "name": "bookstores"
     },
-    {
-      "fileId": "1-q9FWRuNpCZZ9xNoDeSHv024QOn_ornSije6P2ePUqc",
-      "type": "sheet",
-      "name": "discography"
-    },
+
     {
       "fileId": "16972nKdovQf_E7rrF4Jvjq8iuguAQcO8uLHMZ7ymhPU",
       "type": "sheet",
-      "name": "members"
+      "name": "queen"
     }
   ],
   "to_bake": [
@@ -28,6 +24,13 @@
       "array": "books",
       "slug": "slug",
       "path": "books"
+    },
+    {
+      "template": "bake-queen",
+      "data": "queen",
+      "array": "members",
+      "slug": "slug",
+      "path": "members"
     }
   ]
 }

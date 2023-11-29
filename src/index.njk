@@ -1,8 +1,27 @@
 {% extends '_templates/base.njk' %}
 
 {% block content %}
-{% block page_title %}Home{% endblock %}
+
+<section id="jumbo">
+  <div class="container">
+    <h1>Queen</h1>
+  </div>
+</section>
+
 <div class="container">
-  <p>Content goes here</p>
+  <div class="row">
+    <div class="col-12 col-md-6 offset-md-3"><h1>QueenWiki - Your Ultimate Queen Fan Resource</h1>
+<p>Welcome to QueenWiki, the online encyclopedia for all things Queen! Immerse yourself in the history, music, and stories of one of the greatest rock bands of all time.</p>
+
+<h2>Member Bios</h2>
+      <ul>
+        {% for members in queen.members %}
+          <li>
+                 <h3><a href="/members/{{ members.slug }}.html">{{ members.name }}</a></h3>
+          </li>
+        {% endfor %}
+      </ul>
+</div>
+</div>
 </div>
 {% endblock %}

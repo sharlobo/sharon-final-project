@@ -1,27 +1,47 @@
 {% extends '_templates/base.njk' %}
 
+{% set relative_path = "../" %}
+
 {% block page_title %}Members{% endblock %}
 
 {% block page_description %}A list of the Queen members{% endblock %}
 
 {% block content %}
+
+<section id="jumbo">
+  <div class="container">
+    <h1>Queen</h1>
+  </div>
+</section>
+
 <article class="container">
-  <h1>Members of Queen</h1>
-  <p>Intro text here.</p>
+  <h1>Members</h1>
+  <p> <p>Queen, an iconic British rock band formed in 1970, became a powerhouse of musical innovation and showmanship. Comprising four exceptional talents – Freddie Mercury, Brian May, Roger Taylor, and John Deacon – Queen redefined the boundaries of rock music.</p>
+  <p>{{ blurb | safe }}</p>
     <div class="row">
-    {% for members in members.members %}
-    <div class="col-sm-6">
-      <div class="card">
-         <img src="{{ members.image }}">
+    {% for members in queen.members %}
+
+<div class="card text-bg-dark mb-3" style="max-width: 540px; margin-bottom: 20px;">
+  <div class="row gx-5">
+    <div class="col-md-4">
+         <img src="/img//{{ members.image }}" class="img-fluid rounded-start">
+    </div>
+        <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title">{{ members.name }}</h5>
-          <p class="card-text">{{ members.instruments }}</p>
-          <a href="{{ members.source }}" target="_blank">Source</a>
+          <p class="card-text">
+                <strong>Instruments:</strong> {{ members.instruments }}
+                <strong>Birthplace:</strong> {{ members.birthplace }} <br>
+                <strong>Tenure:</strong> {{ members.tenure }} <br>
+          </p>
         </div>
       </div>
     </div>
-    {% endfor %}
   </div>
+    {% endfor %}
+
+</div>
 </article>
+
 {% endblock %}
 
