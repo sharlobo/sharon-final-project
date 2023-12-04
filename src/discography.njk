@@ -7,28 +7,40 @@
 {% block content %}
 
 <section id="jumbo-disco">
-      <div class="container">
-      </div>
-    </section>
+  <div class="container">
+  </div>
+</section>
 
 <article class="container">
   <h1>Discography</h1>
   <p> Queen released a total of 15 studio albums during their career. These albums showcase their versatility, spanning various genres from rock and pop to opera and progressive music. Their iconic releases include albums like "A Night at the Opera," "Sheer Heart Attack," "A Day at the Races," "The Game," and "News of the World." Their diverse musical styles contributed significantly to their lasting impact on the music industry.</p>
 
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
     {% for discography in queen.discography %}
-
-    <div class="col">
-      <div class="card border-light mb-3" style="width: 18rem;">
-          <img src="/img//{{ discography.image }}" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">{{ discography.title }}</h5>
-          <p class="card-text">{{ discography.year }}</p>
+      <div class="col">
+        <div class="card border-light mb-3">
+          <img src="/img/{{ discography.image }}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">{{ discography.title }}</h5>
+            <p class="card-text">{{ discography.year }}</p>
+          </div>
         </div>
       </div>
-    </div>
     {% endfor %}
+  </div>
+</article>
+
+<article class="container">
+  <div class="container">
+    <h1>Chart Data</h1>
+    <p>The chart below displays information on Queen's biggest hits in their discography</p>
+  </div>
+
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" title="Weeks on Billboard Hot 100" aria-label="Bar chart" id="datawrapper-chart-WzbQv" src="https://datawrapper.dwcdn.net/WzbQv/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="654" data-external="1"></iframe>
+    <script type="text/javascript">
+      !function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+    </script>
   </div>
 </article>
 

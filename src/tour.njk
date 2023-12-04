@@ -1,0 +1,41 @@
+{% extends '_templates/base.njk' %}
+
+{% block page_title %}Queen Tour{% endblock %}
+
+{% block page_description %}Information about Queen's tours{% endblock %}
+
+{% block content %}
+
+<section id="jumbo">
+  <div class="container">
+  </div>
+</section>
+
+<article class="container">
+  <h1>Tour Dates</h1>
+  <p>Queen, the iconic British rock band, is bringing their electrifying performances to your city soon! Get ready for an unforgettable musical experience as they take the stage on their highly anticipated tour.</p>
+
+  <div class="table-responsive">
+    <table class="table table-striped">
+
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Venue</th>
+          <th>City</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for tour in queen.tour %}
+          <tr>
+            <td>{{ tour.date }}</td>
+            <td>{{ tour.venue }}</td>
+            <td>{{ tour.city }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</article>
+
+{% endblock %}

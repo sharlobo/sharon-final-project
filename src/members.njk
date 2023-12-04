@@ -16,32 +16,33 @@
 
 <article class="container">
   <h1>Members</h1>
-  <p> <p>Queen, an iconic British rock band formed in 1970, became a powerhouse of musical innovation and showmanship. Comprising four exceptional talents – Freddie Mercury, Brian May, Roger Taylor, and John Deacon – Queen redefined the boundaries of rock music.</p>
-  <p>{{ blurb | safe }}</p>
-    <div class="row">
-    {% for members in queen.members %}
+  <p>Queen, an iconic British rock band formed in 1970, became a powerhouse of musical innovation and showmanship. Comprising four exceptional talents – Freddie Mercury, Brian May, Roger Taylor, and John Deacon – Queen redefined the boundaries of rock music.</p>
 
-<div class="card text-bg-dark mb-3" style="max-width: 540px; margin-bottom: 20px;">
-  <div class="row gx-5">
-    <div class="col-md-4">
-         <img src="/img//{{ members.image }}" class="img-fluid rounded-start">
-    </div>
-        <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">{{ members.name }}</h5>
-          <p class="card-text">
+  <p>{{ blurb | safe }}</p>
+  <div class="row row-cols-1 row-cols-md-2">
+    {% for members in queen.members %}
+    <div class="col mb-4">
+      <div class="card bg-dark text-light">
+        <div class="row g-0">
+          <div class="col-md-4 x-0">
+            <img src="/img/{{ members.imagebw }}" class="img-fluid rounded-start" style="width: 100%; height: 100%;">
+          </div>
+          <div class="col-md-8 x-0">
+            <div class="card-body">
+              <h5 class="card-title">{{ members.name }}</h5>
+              <p class="card-text text-light">
                 <strong>Instruments:</strong> {{ members.instruments }}
                 <strong>Birthplace:</strong> {{ members.birthplace }} <br>
                 <strong>Tenure:</strong> {{ members.tenure }} <br>
-          </p>
+              </p>
+              <a href="/members/{{ members.slug }}.html" class="btn btn-light">Learn More</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
     {% endfor %}
-
-</div>
+  </div>
 </article>
 
 {% endblock %}
-
