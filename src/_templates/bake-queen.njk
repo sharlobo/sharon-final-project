@@ -3,7 +3,7 @@
 {% set relative_path = "../" %}
 {% from '_macros/prose.njk' import prose %}
 
-{% block page_title %}{{ headline }}{% endblock %}
+{% block page_title %}{{ name }}{% endblock %}
 
 {% block page_description %}{{ headline }}{% endblock %}
 
@@ -11,12 +11,12 @@
   <article class="container">
     <div class="row">
       <div class="col-sm-8">
-        <h1>{{ headline }}</h1>
+        <h1>{{ name }}</h1>
         {{ prose(post) }}
         {{ description | safe }}
       </div>
       <div class="col-sm-4">
-        <img src="../img/{{ image }}" alt="" class="img-fluid mb-4">
+        <img src="../img/{{ imagebw }}" alt="" class="img-fluid mb-4">
       </div>
     </div>
   </article>
