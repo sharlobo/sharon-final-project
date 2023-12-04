@@ -4,3 +4,13 @@ body {
   background-color: black;
   color: white;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Hedvig+Letters+Serif:opsz@12..24&display=swap');
+
+h1 {
+  font-family: 'Castoro Titling', serif; /* Fallback to generic serif font */
+}
+
+h1 {
+  font-family: 'Hedvig Letters Serif', serif; /* Fallback to generic serif font */
+}
